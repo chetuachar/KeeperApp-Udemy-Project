@@ -1,12 +1,15 @@
 import "../css/Note.css";
 
 const Note = (props) => {
-  // key={note.key} title={note.title} content={note.content}
+  const handleOnClick = () => {
+    props.onDelete(props.id);
+  };
   const { title, content } = props;
   return (
     <div className="note">
       <h2>{title}</h2>
       <p>{content}</p>
+      <button onClick={handleOnClick}>DELETE</button>
     </div>
   );
 };
